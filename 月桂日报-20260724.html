@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>月桂日报 2026-07-23</title>
+<style>
+body { font-family: -apple-system,"Microsoft YaHei",sans-serif; max-width:960px; margin:0 auto; padding:20px; background:#fafafa; color:#333; }
+h1 { font-size:18px; border-bottom:2px solid #333; padding-bottom:8px; margin-top:0; }
+h2 { font-size:16px; font-weight:500; color:#333; border-bottom:1px solid #ddd; padding-bottom:6px; margin:32px 0 12px 0; }
+h3 { font-size:14px; color:#1565c0; margin:20px 0 8px 0; padding:6px 12px; background:#e3f2fd; border-left:4px solid #1565c0; }
+.weibo-body p { font-size:13px; line-height:1.6; margin:8px 0 8px 12px; }
+.info { font-size:13px; color:#666; margin-bottom:16px; }
+.missing { color:#999; font-size:14px; font-style:italic; padding:12px; }
+
+/* XWLB 表格样式 */
+table { width:100%; border-collapse:collapse; font-size:13px; line-height:1.5; background:#fff; }
+th { background:#f0f0f0; padding:8px 10px; text-align:left; font-weight:500; border-bottom:1px solid #ddd; }
+td { padding:6px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+.w { width:30px; text-align:center; }
+.sector { white-space:nowrap; min-width:140px; font-weight:500; }
+.desc { }
+tr.red-row td.sector { color:#c62828; }
+tr.red-row { background:#fff5f5; }
+tr:hover { background:#f0f0f0 !important; }
+tr.red-row:hover { background:#ffe0e0 !important; }
+
+/* Mini 板块样式 */
+.num { text-align:center; white-space:nowrap; }
+.cause { color:#666; font-size:12px; max-width:240px; }
+.bullish { color:#d32f2f; font-weight:500; }
+.bearish { color:#2e7d32; font-weight:500; }
+.tag-over { background:#ffcdd2; color:#c62828; padding:2px 6px; border-radius:3px; font-size:11px; }
+.tag-high { background:#ffe0b2; color:#e65100; padding:2px 6px; border-radius:3px; font-size:11px; }
+.tag-mild { background:#c8e6c9; color:#2e7d32; padding:2px 6px; border-radius:3px; font-size:11px; }
+.tag-diverge { background:#bbdefb; color:#1565c0; padding:2px 6px; border-radius:3px; font-size:11px; }
+.tag-flat { background:#eee; color:#999; padding:2px 6px; border-radius:3px; font-size:11px; }
+.fund-in { color:#d32f2f; }
+.fund-out { color:#2e7d32; }
+
+/* Tabs */
+.tabs { display:flex; gap:0; margin-bottom:20px; border-bottom:2px solid #ddd; }
+.tab { padding:10px 20px; font-size:14px; cursor:pointer; border:none; background:none; color:#666; border-bottom:2px solid transparent; margin-bottom:-2px; }
+.tab.active { color:#1565c0; border-bottom-color:#1565c0; font-weight:500; }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+</style></head><body>
+<h1>月桂日报 2026-07-23</h1>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('tab-xwlb')">新闻联播</button>
+  <button class="tab" onclick="switchTab('tab-weibo')">微博群聊</button>
+  <button class="tab" onclick="switchTab('tab-sector')">板块信号</button>
+</div>
+
+<div id="tab-xwlb" class="tab-content active">
+  <h2>新闻联播摘要</h2>
+  
+<p class="legend">共 8 条 | <span style="color:#d32f2f;">■ 重要 4条</span> | <span style="color:#999;">□ 普通 4条</span></p>
+<table>
+<tr><th></th><th>关联板块</th><th>新闻简述</th></tr>
+<tr class="red-row"><td class="w"><span style="color:#d32f2f;font-weight:700;">■</span></td><td class="sector">贸易,物流</td><td class="desc">义乌小商品贸易数据与中欧班列（进出口总值8365亿元，义新欧中欧班列）</td></tr>
+<tr><td class="w"><span style="color:#999;">□</span></td><td class="sector">汽车整车,电池</td><td class="desc">探讨加强新能源、电动汽车等领域合作（新闻原词：新能源、电动汽车）</td></tr>
+<tr><td class="w"><span style="color:#999;">□</span></td><td class="sector">贸易,旅游及酒店,机场航运</td><td class="desc">简述（捷克合作、经贸、旅游、直航）</td></tr>
+<tr class="red-row"><td class="w"><span style="color:#d32f2f;font-weight:700;">■</span></td><td class="sector">其他社会服务</td><td class="desc">政策利好全民健身（《全民健身计划》）</td></tr>
+<tr class="red-row"><td class="w"><span style="color:#d32f2f;font-weight:700;">■</span></td><td class="sector">零售,半导体</td><td class="desc">扩消费稳外贸稳外资 上半年商务发展稳中有进（消费场景、集成电路）</td></tr>
+<tr><td class="w"><span style="color:#999;">□</span></td><td class="sector">机场航运</td><td class="desc">简述（航空公司航线数量超1000条、客座率85.7%、靠桥率87.5%）</td></tr>
+<tr><td class="w"><span style="color:#999;">□</span></td><td class="sector">影视院线,文化传媒,游戏,旅游及酒店</td><td class="desc">简述（暑期档电影票房突破50亿元，超百部影片，IP衍生品与文旅消费增长）</td></tr>
+<tr class="red-row"><td class="w"><span style="color:#d32f2f;font-weight:700;">■</span></td><td class="sector">军工装备</td><td class="desc">美国称打击伊朗沿海监视站点等目标 伊朗称袭击美军基地（基础设施、天然气、无人机、电力、石油、石油出口）</td></tr>
+</table>
+</div>
+<div id="tab-weibo" class="tab-content">
+  <h2>微博群聊概括</h2>
+  <div class="weibo-body">
+<p class="info">当日消息 3728 条 | 沉睡之书11(214条),Luna7057(0条)</p>
+<h3>沉睡之书11 · 锂矿</h3>
+<p>锂矿观察指标是半导体起来那天不被抽血，紫金矿业从24涨到32，中矿资源新买的锂矿直接出精矿且探矿能力最强，慕容锂矿90亿市值对应1200万吨原矿约3万吨碳酸锂，木绒矿8万吨，宁德矿约3万吨，期货14.7万没站稳就卖一点，今天锂矿被量化封板主导，资金持续性存疑。</p>
+<h3>沉睡之书11 · 半导体</h3>
+<p>半导体不可能死，科技兴国是长期逻辑，如果市场认业绩就会起来，但半导体起来一下又躺回去，持续度难做，局部优质企业走波段结构涨更好。</p>
+<h3>沉睡之书11 · AI算力</h3>
+<p>DeepSeek今天有调研，梁文峰访谈称服务器十个月回收设备成本，财务摊销和商业成本是两回事，算力租赁业绩暴涨可以交叉验证，Kimi被疯狂针对说明水平不错，需求可以开发，AGI烧词元有巨大潜力。</p>
+<h3>沉睡之书11 · 新股</h3>
+<p>长鑫科技官宣7月27日在科创板上市，新股首日最高12倍，按1300%换手计算全部卖完约1300亿。</p>
+<h3>沉睡之书11 · 策略</h3>
+<p>盘面很健康，好业绩票该给估值，今天杀电网设备和电力，医药和半导体都起来一下又躺回去，科技才吃成交量，电影板块只有100亿，做多好业绩的票才能纠偏市场失灵。</p>
+<h3>沉睡之书11 · 红利</h3>
+<p>自由现金流指数不太行，挨打比红利多，吃肉和红利差不多，直接做中远海控或美的集团更香，自由现金流指数里一堆不咋地的公司，经历完整牛熊后还是红利策略稳稳幸福。</p><h3>Luna7057</h3><p>当日无发言</p></div>
+</div>
+<div id="tab-sector" class="tab-content">
+  <h2>板块信号</h2>
+  
+<table><tr><th>板块</th><th>信号</th><th>超额1日</th><th>超额5日</th><th>超额20日</th><th>资金</th><th>状态</th><th>利空</th></tr>
+<tr><td>半导体</td><td class="num">5条(10.6%) <span class="bullish">净+5</span></td><td class="num">-3.47%</td><td class="num"><span style="color:#2e7d32">-11.74%</span></td><td class="num">+4.31%</td><td class="num fund-out">-193亿</td><td><span class="tag-mild">温和</span></td><td class="num"></td></tr>
+<tr><td>能源金属</td><td class="num">4条(8.5%) <span class="bullish">净+4</span></td><td class="num"><span style="color:#d32f2f">+6.30%</span></td><td class="num">-0.78%</td><td class="num"><span style="color:#2e7d32">-13.48%</span></td><td class="num fund-in">+12亿</td><td><span class="tag-diverge">背离</span></td><td class="num"></td></tr>
+<tr><td>电力</td><td class="num">4条(8.5%) <span class="bullish">净+4</span></td><td class="num">+1.51%</td><td class="num"><span style="color:#d32f2f">+8.34%</span></td><td class="num">-2.61%</td><td class="num fund-out">微量</td><td><span class="tag-over">过热</span></td><td class="num"></td></tr>
+<tr><td>未分类</td><td class="num">4条(8.5%) <span class="">净+0</span></td><td class="num">-0.23%</td><td class="num">-0.63%</td><td class="num"><span style="color:#d32f2f">+5.82%</span></td><td class="num "></td><td><span class="tag-mild">温和</span></td><td class="num"></td></tr>
+<tr><td>软件开发</td><td class="num">3条(6.4%) <span class="bullish">净+2</span></td><td class="num">-0.16%</td><td class="num"><span style="color:#2e7d32">-5.37%</span></td><td class="num"><span style="color:#2e7d32">-7.34%</span></td><td class="num fund-out">-19亿</td><td><span class="tag-diverge">背离</span></td><td class="num"></td></tr>
+<tr><td>工业金属</td><td class="num">2条(4.3%) <span class="bullish">净+2</span></td><td class="num">+3.98%</td><td class="num">+1.76%</td><td class="num">+1.12%</td><td class="num fund-in">+50亿</td><td><span class="tag-mild">温和</span></td><td class="num"></td></tr>
+<tr><td>军工装备</td><td class="num">2条(4.3%) <span class="bullish">净+2</span></td><td class="num">+3.22%</td><td class="num">-2.85%</td><td class="num"><span style="color:#2e7d32">-5.60%</span></td><td class="num fund-in">+21亿</td><td><span class="tag-diverge">背离</span></td><td class="num"></td></tr>
+<tr><td>光伏设备</td><td class="num">1条(2.1%) <span class="bullish">净+1</span></td><td class="num">+2.99%</td><td class="num">-3.41%</td><td class="num"><span style="color:#2e7d32">-12.52%</span></td><td class="num fund-in">+20亿</td><td><span class="tag-diverge">背离</span></td><td class="num"></td></tr>
+<tr><td>建筑装饰</td><td class="num">1条(2.1%) <span class="">净+0</span></td><td class="num">+2.09%</td><td class="num"><span style="color:#2e7d32">-6.16%</span></td><td class="num"><span style="color:#2e7d32">-6.92%</span></td><td class="num fund-in">+9亿</td><td><span class="tag-mild">温和</span></td><td class="num"></td></tr>
+<tr><td>汽车整车</td><td class="num">2条(4.3%) <span class="bullish">净+2</span></td><td class="num">+2.35%</td><td class="num">-0.57%</td><td class="num">-3.88%</td><td class="num fund-in">+9亿</td><td><span class="tag-diverge">背离</span></td><td class="num"></td></tr>
+</table>
+</div>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body></html>
