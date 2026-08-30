@@ -17,7 +17,7 @@
   --cell-bg: rgba(51,102,102,.51);
   --ink: #F2F3F4;
   --ink-term: #F43E06;
-  --bar-h-mobile: 86px;        /* 移动端顶部 bar 占用高度（4 行 meta 紧凑布局，给 7 行 grid 让位） */
+  --bar-h-mobile: 102px;       /* 移动端顶部 bar 占用高度（term 26 + meta 4 行紧凑 ≈ 60 + padding 12） */
 
   /* 全局中文字体：华文中宋（宋体类）。顶部 header 与格子内统一使用 */
   --font-zhong: "华文中宋", "STZhongsong", "STSong", "SimSun", "Songti SC", serif;
@@ -53,14 +53,15 @@ body{
   border-bottom:1px solid rgba(255,255,255,.10);
   min-height:var(--bar-h-mobile);
 }
-.bar-mobile .term{font-size:18px;letter-spacing:.12em;line-height:1.1}
+.bar-mobile .term{font-size:26px;letter-spacing:.12em;line-height:1.05}
 .bar-mobile .meta{font-size:11px;line-height:1.35;letter-spacing:.02em;font-weight:500}
 .bar-mobile .meta .meta-line{display:block}
 .bar-desktop{display:none}
 
 /* 顶部节气条共享样式（两个 bar 都用） */
+/* .term 字号 ≈ .bar .meta 两行高度之和（桌面 1080p 两行 ≈ 60px，对应 font-size clamp 上限 58） */
 .bar .term{
-  font-size:clamp(20px,3.6vh,32px);font-weight:600;letter-spacing:.18em;
+  font-size:clamp(38px,5.4vh,58px);font-weight:600;letter-spacing:.20em;line-height:1.05;
   color:var(--ink);text-shadow:var(--shadow-term-title);
   white-space:nowrap;
 }
@@ -130,21 +131,22 @@ body{
 .cell.is-term .d{color:var(--ink-term);font-weight:600;text-shadow:var(--shadow-term)}
 .cell.is-term .d a{color:inherit}
 .tn{
-  /* 字号自适配（原大小）：父盒填充后，仅一个字间距明显，整体看着略小 */
+  /* 字号自适配（原大小 -2）：从 32/20 缩到 30/18 */
   display:flex;align-items:baseline;justify-content:space-between;
   align-self:stretch;                          /* 占满 .box 宽 → 两端对齐到 .box 两边 */
   margin-top:.04em;
   font-family:var(--font-cell);
-  font-size:clamp(20px,3.2vh,32px);font-weight:600;
+  font-size:clamp(18px,2.85vh,30px);font-weight:600;line-height:1.1;
   color:var(--ink-term);white-space:nowrap;
   text-shadow:var(--shadow-name);
-  /* 不设 letter-spacing（会全字符尾多发 → “秋”后多空隙），字符间由 render_cells 拆出 .c + .c margin-left 控制 */
+  /* 下划线用 border-bottom 沿 flex 容器贯穿 —— 不受拆字符间隙影响 */
+  border-bottom:1px solid currentColor;
+  padding-bottom:2px;
 }
 .tn > .c{display:inline-block}
-.tn > .c + .c{margin-left:.33em}     /* 1/3 个字宽 */
-/* .tn 作为 <a> 时：保持银红字色不变（不依赖 inherit，避免某些浏览器掉链），加细下划线（节气名索引） */
-a.tn{color:var(--ink-term);text-decoration:underline;text-decoration-thickness:1px;
-     text-underline-offset:3px}
+.tn > .c + .c{margin-left:.33em}     /* 1/3 个字宽（不引发 underline 间隙，因为是 box border 不是 letter-spacing） */
+/* .tn 作为 <a> 时：保持银红字色 + 边框连贯 */
+a.tn{color:var(--ink-term)}
 a.tn:hover{color:var(--ink-term)}
 
 .cell.is-void .box{background:rgba(255,255,255,.05);border-style:dashed;border-color:rgba(255,255,255,.10)}
@@ -188,13 +190,13 @@ a.tn:hover{color:var(--ink-term)}
     overflow:hidden;          /* 桌面 grid 超出 .field 时截断 */
     position:relative;        /* grid 居中 reference */
   }
-  .bar .term{font-size:clamp(20px,3.6vh,32px);letter-spacing:.22em}
+  .bar .term{letter-spacing:.22em}
   .bar .meta{font-size:clamp(13px,2.3vh,20px);line-height:1.5}
 }
 
 /* 极矮屏（横屏手机）保护 */
 @media (max-height:430px){
-  :root{--bar-h-mobile:54px}
+  :root{--bar-h-mobile:70px}
   .bar-mobile .term{font-size:18px;letter-spacing:.10em}
   .bar-mobile .meta{font-size:9.5px}
 }
