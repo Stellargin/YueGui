@@ -136,6 +136,10 @@ body{
   color:var(--ink-term);white-space:nowrap;
   text-shadow:var(--shadow-name);
 }
+/* .tn 作为 <a> 时：保持银红字色不变，加细下划线（节气名索引） */
+a.tn{color:inherit;text-decoration:underline;text-decoration-thickness:1px;
+     text-underline-offset:3px}
+a.tn:hover{color:inherit}
 
 .cell.is-void .box{background:rgba(255,255,255,.05);border-style:dashed;border-color:rgba(255,255,255,.10)}
 
@@ -188,6 +192,16 @@ body{
   .bar-mobile .term{font-size:18px;letter-spacing:.10em}
   .bar-mobile .meta{font-size:9.5px}
 }
+
+/* 节气页底部导航：年份总表 / 日报列表（固定底部，不破坏全屏布局） */
+.termnav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:22px;
+justify-content:center;padding:9px 12px;padding-bottom:calc(9px + env(safe-area-inset-bottom));
+background:rgba(0,0,0,.40);backdrop-filter:blur(10px) saturate(120%);
+-webkit-backdrop-filter:blur(10px) saturate(120%);
+border-top:1px solid rgba(255,255,255,.10);font-size:13px;letter-spacing:.04em}
+.termnav a{color:#9fd8c4;text-decoration:none;opacity:.9;border-bottom:1px solid rgba(159,216,196,.28);
+padding-bottom:2px;transition:opacity .15s}
+.termnav a:hover{opacity:1}
 </style>
 </head>
 <body>
@@ -196,9 +210,9 @@ body{
     <div class="term">立冬</div>
     <div class="meta">
       <span class="meta-line">立冬 11-7 ~ 11-21</span>
-      <span class="meta-line ">2026-11-15</span>
-      <span class="meta-line ">丙午年十月初七</span>
-      <span class="meta-line ">丙午马年 己亥月 癸巳日</span>
+      <span class="meta-line is-term-today">2026-11-07 立冬</span>
+      <span class="meta-line is-term-today">丙午年九月廿九</span>
+      <span class="meta-line is-term-today">丙午马年 己亥月 乙酉日</span>
     </div>
   </div>
   <main class="stage">
@@ -207,9 +221,9 @@ body{
         <div class="term">立冬</div>
         <div class="meta">
           <span class="meta-line">立冬 11-7 ~ 11-21</span>
-          <span class="meta-line ">2026-11-15</span>
-          <span class="meta-line ">丙午年十月初七</span>
-          <span class="meta-line ">丙午马年 己亥月 癸巳日</span>
+          <span class="meta-line is-term-today">2026-11-07 立冬</span>
+          <span class="meta-line is-term-today">丙午年九月廿九</span>
+          <span class="meta-line is-term-today">丙午马年 己亥月 乙酉日</span>
         </div>
       </div>
     </div>
@@ -220,7 +234,7 @@ body{
         <div class="cell" data-date="2026-11-04"><div class="box"><span class="d">2026-11-04</span></div></div>
         <div class="cell" data-date="2026-11-05"><div class="box"><span class="d">2026-11-05</span></div></div>
         <div class="cell" data-date="2026-11-06"><div class="box"><span class="d">2026-11-06</span></div></div>
-        <div class="cell is-term" data-date="2026-11-07"><div class="box"><span class="d">2026-11-07</span><span class="tn">立冬</span></div></div>
+        <div class="cell is-term is-today has-tn-link" data-date="2026-11-07"><div class="box"><span class="d">2026-11-07</span><a class="tn" href="2026lidong.html">立冬</a></div></div>
         <div class="cell" data-date="2026-11-08"><div class="box"><span class="d">2026-11-08</span></div></div>
         <div class="cell" data-date="2026-11-09"><div class="box"><span class="d">2026-11-09</span></div></div>
         <div class="cell" data-date="2026-11-10"><div class="box"><span class="d">2026-11-10</span></div></div>
@@ -228,17 +242,18 @@ body{
         <div class="cell" data-date="2026-11-12"><div class="box"><span class="d">2026-11-12</span></div></div>
         <div class="cell" data-date="2026-11-13"><div class="box"><span class="d">2026-11-13</span></div></div>
         <div class="cell" data-date="2026-11-14"><div class="box"><span class="d">2026-11-14</span></div></div>
-        <div class="cell is-today" data-date="2026-11-15"><div class="box"><span class="d">2026-11-15</span></div></div>
+        <div class="cell" data-date="2026-11-15"><div class="box"><span class="d">2026-11-15</span></div></div>
         <div class="cell" data-date="2026-11-16"><div class="box"><span class="d">2026-11-16</span></div></div>
         <div class="cell" data-date="2026-11-17"><div class="box"><span class="d">2026-11-17</span></div></div>
         <div class="cell" data-date="2026-11-18"><div class="box"><span class="d">2026-11-18</span></div></div>
         <div class="cell" data-date="2026-11-19"><div class="box"><span class="d">2026-11-19</span></div></div>
         <div class="cell" data-date="2026-11-20"><div class="box"><span class="d">2026-11-20</span></div></div>
         <div class="cell" data-date="2026-11-21"><div class="box"><span class="d">2026-11-21</span></div></div>
-        <div class="cell is-term has-link" data-date="2026-11-22"><div class="box"><span class="d"><a href="节气-2026-小雪.html" title="2026-11-22">2026-11-22</a></span><span class="tn">小雪</span></div></div>
+        <div class="cell is-term has-link has-tn-link" data-date="2026-11-22"><div class="box"><span class="d"><a href="2026xiaoxue.html" title="2026-11-22">2026-11-22</a></span><a class="tn" href="2026xiaoxue.html">小雪</a></div></div>
       </div>
     </section>
   </main>
+  <nav class="termnav"><a href="nian.html">年份总表</a><a href="ribao.html">日报列表</a></nav>
 </div>
 </body>
 </html>
