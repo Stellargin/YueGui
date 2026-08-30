@@ -136,10 +136,10 @@ body{
   color:var(--ink-term);white-space:nowrap;
   text-shadow:var(--shadow-name);
 }
-/* .tn 作为 <a> 时：保持银红字色不变，加细下划线（节气名索引） */
-a.tn{color:inherit;text-decoration:underline;text-decoration-thickness:1px;
+/* .tn 作为 <a> 时：保持银红字色不变（不依赖 inherit，避免某些浏览器掉链），加细下划线（节气名索引） */
+a.tn{color:var(--ink-term);text-decoration:underline;text-decoration-thickness:1px;
      text-underline-offset:3px}
-a.tn:hover{color:inherit}
+a.tn:hover{color:var(--ink-term)}
 
 .cell.is-void .box{background:rgba(255,255,255,.05);border-style:dashed;border-color:rgba(255,255,255,.10)}
 
@@ -209,7 +209,7 @@ padding-bottom:2px;transition:opacity .15s}
   <div class="bar bar-mobile">
     <div class="term">夏至</div>
     <div class="meta">
-      <span class="meta-line">夏至 6-21 ~ 7-6</span>
+      <span class="meta-line">夏至 06-21 ~ 07-06</span>
       <span class="meta-line is-term-today">2026-06-21 夏至</span>
       <span class="meta-line is-term-today">丙午年五月初七</span>
       <span class="meta-line is-term-today">丙午马年 甲午月 丙寅日</span>
@@ -220,7 +220,7 @@ padding-bottom:2px;transition:opacity .15s}
       <div class="bar bar-desktop">
         <div class="term">夏至</div>
         <div class="meta">
-          <span class="meta-line">夏至 6-21 ~ 7-6</span>
+          <span class="meta-line">夏至 06-21 ~ 07-06</span>
           <span class="meta-line is-term-today">2026-06-21 夏至</span>
           <span class="meta-line is-term-today">丙午年五月初七</span>
           <span class="meta-line is-term-today">丙午马年 甲午月 丙寅日</span>
