@@ -12,7 +12,7 @@ h1{font-size:clamp(20px,3.4vw,30px);letter-spacing:.16em;margin-bottom:6px}
 .topnav a{color:#9fd8c4;text-decoration:none;opacity:.85;border-bottom:1px solid rgba(159,216,196,.28);
 padding-bottom:2px}
 .topnav a:hover{opacity:1}
-ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;list-style:none}
+ul{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;list-style:none}
 li a{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border-radius:12px;
 background:rgba(51,102,102,.28);border:1px solid rgba(255,255,255,.10);
 color:#F2F3F4;text-decoration:none;transition:background .15s,transform .15s}
@@ -27,13 +27,14 @@ background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);opacity
 li.empty b{font-size:clamp(26px,4vw,38px);letter-spacing:.06em;font-weight:600}
 li.empty .gz{font-size:13px;opacity:.6;letter-spacing:.06em}
 li.empty em{opacity:.5}
-@media(max-width:520px){ul{grid-template-columns:1fr}}
+/* 窄屏降级：桌面 6 年一行 → 手机/平板 3 年一行（12 生肖整除） */
+@media(max-width:900px){ul{grid-template-columns:repeat(3,1fr)}}
 </style></head><body>
 <nav class="topnav"><a href="./">← 当期节气</a><a href="ribao.html">日报列表</a></nav>
 <h1>月桂日报 · 年份总表</h1>
 <div class="sub">共 2 个年份　|　点年份进入该年节气总表（四季 × 6 节气）</div>
 <ul>
-<li class="empty"><b>2027</b><span class="gz">丁未 · 生肖羊</span><em>0 / 24 节气（待上线）</em></li>
 <li><a href="2026.html"><b>2026</b><span class="gz">丙午年 · 生肖马</span><span class="prog"><i style="width:58%"></i></span><em>14 / 24 节气</em></a></li>
+<li class="empty"><b>2027</b><span class="gz">丁未 · 生肖羊</span><em>0 / 24 节气（待上线）</em></li>
 </ul>
 </body></html>
