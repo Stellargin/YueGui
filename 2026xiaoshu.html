@@ -131,21 +131,23 @@ body{
 .cell.is-term .d{color:var(--ink-term);font-weight:600;text-shadow:var(--shadow-term)}
 .cell.is-term .d a{color:inherit}
 .tn{
-  /* 字号自适配（原大小 -2）：从 32/20 缩到 30/18 */
-  display:flex;align-items:baseline;justify-content:space-between;
-  align-self:stretch;                          /* 占满 .box 宽 → 两端对齐到 .box 两边 */
+  /* 撤销 flex 拆字距离（v26.2 写法）：inline-block 让 .tn 宽度 = 内容宽度，
+     再交回给 .box 的 align-items:center 让"立 秋"整组水平居中 */
+  display:inline-block;
   margin-top:.04em;
   font-family:var(--font-cell);
   font-size:clamp(18px,2.85vh,30px);font-weight:600;line-height:1.1;
   color:var(--ink-term);white-space:nowrap;
   text-shadow:var(--shadow-name);
-  /* 下划线用 border-bottom 沿 flex 容器贯穿 —— 不受拆字符间隙影响 */
+  /* 下划线沿 inline-block 边线 —— 同样不受拆字符间隙影响 */
   border-bottom:1px solid currentColor;
   padding-bottom:2px;
 }
 .tn > .c{display:inline-block}
-.tn > .c + .c{margin-left:.33em}     /* 1/3 个字宽（不引发 underline 间隙，因为是 box border 不是 letter-spacing） */
-/* .tn 作为 <a> 时：保持银红字色 + 边框连贯 */
+/* 第二个字起加 1/3 字宽 margin：对应"立"和"秋"中间的 1/3 字空白。
+   第二个字后面不再加任何间距 → 不再出现截图里的尾随空隙。*/
+.tn > .c + .c{margin-left:.33em}
+/* .tn 作为 <a> 时：保持银红字色 */
 a.tn{color:var(--ink-term)}
 a.tn:hover{color:var(--ink-term)}
 
@@ -201,7 +203,7 @@ a.tn:hover{color:var(--ink-term)}
   .bar-mobile .meta{font-size:9.5px}
 }
 
-/* 节气页底部导航：年份总表 / 日报列表（固定底部，不破坏全屏布局） */
+/* ===== 节气页底部导航：暂时注释掉（用户 2026-08-31 考虑新形态中） =====
 .termnav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:22px;
 justify-content:center;padding:9px 12px;padding-bottom:calc(9px + env(safe-area-inset-bottom));
 background:rgba(0,0,0,.40);backdrop-filter:blur(10px) saturate(120%);
@@ -210,6 +212,7 @@ border-top:1px solid rgba(255,255,255,.10);font-size:13px;letter-spacing:.04em}
 .termnav a{color:#9fd8c4;text-decoration:none;opacity:.9;border-bottom:1px solid rgba(159,216,196,.28);
 padding-bottom:2px;transition:opacity .15s}
 .termnav a:hover{opacity:1}
+===== */
 </style>
 </head>
 <body>
@@ -261,7 +264,7 @@ padding-bottom:2px;transition:opacity .15s}
       </div>
     </section>
   </main>
-  <nav class="termnav"><a href="nian.html">年份总表</a><a href="ribao.html">日报列表</a></nav>
+  <!-- nav class="termnav"><a href="nian.html">年份总表</a><a href="ribao.html">日报列表</a></nav -->
 </div>
 </body>
 </html>
